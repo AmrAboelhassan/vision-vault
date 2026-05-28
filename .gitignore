@@ -1,5 +1,6 @@
 # Python
 __pycache__/
+*.pyc
 *.py[cod]
 *$py.class
 .python-version
@@ -23,6 +24,7 @@ security_db/
 db_images/
 search_results/
 rtx_search_results/
+trk_search_results/
 
 # Large/private media
 *.mp4
