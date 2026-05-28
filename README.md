@@ -2,11 +2,13 @@
 
 **AI-powered local video search using CLIP embeddings and ChromaDB.**
 
-Vision Vault is a local-first computer vision prototype for searching video footage with natural-language queries. It samples frames from video files, converts those frames into CLIP image embeddings, stores them in a local ChromaDB vector database, and exports matching frames when a text query is searched.
+Vision Vault is a local-first computer vision prototype for searching video footage with natural-language queries.
+It samples frames from video files, converts those frames into CLIP image embeddings, stores them in a local ChromaDB vector database, and exports matching frames when a text query is searched.
 
 ## Overview
 
-Traditional video review can be slow when you need to find a specific object, scene, or visual condition across long footage. Vision Vault makes that workflow searchable by combining semantic image embeddings with vector search.
+Traditional video review can be slow when you need to find a specific object, scene, or visual condition across long footage.
+Vision Vault makes that workflow searchable by combining semantic image embeddings with vector search.
 
 Example use cases:
 
@@ -83,7 +85,8 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-The default `requirements.txt` installs PyTorch CUDA 12.1 wheels. If you do not have a CUDA-compatible GPU, install the CPU PyTorch build from the official PyTorch instructions, then install the remaining dependencies.
+The default `requirements.txt` installs PyTorch CUDA 12.1 wheels.
+If you do not have a CUDA-compatible GPU, install the CPU PyTorch build from the official PyTorch instructions, then install the remaining dependencies.
 
 ## Usage
 
@@ -178,9 +181,11 @@ trk_search_results/
 
 ## Safety / Privacy
 
-Vision Vault is a local video search prototype. It does not perform face recognition, does not identify people, and does not make security decisions.
+Vision Vault is a local video search prototype.
+It does not perform face recognition, does not identify people, and does not make security decisions.
 
-Users should only process footage they own or have permission to use. Video files, extracted frames, local databases, and search outputs can contain sensitive information, so they are ignored by Git by default.
+Users should only process footage they own or have permission to use.
+Video files, extracted frames, local databases, and search outputs can contain sensitive information, so they are ignored by Git by default.
 
 ## Limitations
 
