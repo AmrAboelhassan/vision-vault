@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local configuration
+.env
+.env.*
+
+# Generated project data
+security_db/
+db_images/
+search_results/
+rtx_search_results/
+
+# Large/private media
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.wmv
+
+# Local experiment scripts from development
+fast_multi_indexer.py
+search_system.py
+video_search.py
+multi_cam_indexer(real time).py
+gpu check.py
+import cv2.py
+test*.py
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,18 @@
+# CUDA 12.1 PyTorch wheels. Keep this line at the top.
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+torch==2.5.1+cu121
+torchvision==0.20.1+cu121
+torchaudio==2.5.1+cu121
+
+chromadb==0.6.3
+opencv-python==4.11.0.86
+Pillow==11.1.0
+transformers==4.48.3
+safetensors==0.5.2
+
+ftfy==6.3.1
+numpy==2.2.2
+regex==2024.11.6
+requests==2.32.3
+tqdm==4.67.1
