@@ -163,6 +163,30 @@ def export_matches(
     top_k: int,
     threshold: float,
 ) -> list[Path]:
+    matches = search_matches(
+        query,
+        collection=collection,
+        model=model,
+        processor=processor,
+        device=device,
+        output_path=output_path,
+        top_k=top_k,
+        threshold=threshold,
+    )
+    return [match["result_path"] for match in matches]
+
+
+def search_matches(
+    query: str,
+    *,
+    collection,
+    model: Any,
+    processor: Any,
+    device: Any,
+    output_path: Path,
+    top_k: int,
+    threshold: float,
+) -> list[dict[str, Any]]:
     record_count = collection.count()
     if record_count == 0:
         print("The database is empty. Run indexer.py first.")
@@ -182,7 +206,7 @@ def export_matches(
         n_results=min(top_k, record_count),
     )
 
-    exported_paths: list[Path] = []
+    matches: list[dict[str, Any]] = []
     for metadata in results["metadatas"][0]:
         image_path = Path(metadata["path"])
         if not image_path.is_file():
@@ -202,10 +226,18 @@ def export_matches(
         camera = sanitize_filename(metadata["camera"])
         export_path = output_dir / f"{camera}_{timestamp}_score_{int(score * 100)}.jpg"
         cv2.imwrite(str(export_path), frame)
-        exported_paths.append(export_path)
+        matches.append(
+            {
+                "result_path": export_path,
+                "score": score,
+                "timestamp": metadata.get("time", "unknown"),
+                "source": metadata.get("camera", "unknown"),
+                "source_frame_path": image_path,
+            }
+        )
 
-    print(f"Found {len(exported_paths)} high-confidence matches.")
-    return exported_paths
+    print(f"Found {len(matches)} high-confidence matches.")
+    return matches
 
 
 def preview_first_match(paths: list[Path], query: str) -> None:

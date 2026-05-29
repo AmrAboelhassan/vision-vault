@@ -25,12 +25,14 @@ db_images/
 search_results/
 rtx_search_results/
 trk_search_results/
+uploads/
 
 # Large/private media
 *.mp4
 *.avi
 *.mov
 *.mkv
+*.webm
 *.wmv
 
 # Local experiment scripts from development

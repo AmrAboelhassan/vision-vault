@@ -145,6 +145,7 @@ def index_video(
     device: Any,
     frames_path: Path,
     sample_every: float,
+    progress_callback: Any | None = None,
 ) -> int:
     capture = cv2.VideoCapture(str(video_path))
     if not capture.isOpened():
@@ -193,6 +194,8 @@ def index_video(
 
             indexed_count += 1
             progress = (frame_number / total_frames) * 100
+            if progress_callback:
+                progress_callback(progress / 100, frame_number, indexed_count)
             print(f"Progress: {progress:5.1f}% | Indexed frame {frame_number}", end="\r")
 
         frame_number += 1

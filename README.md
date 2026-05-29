@@ -88,6 +88,26 @@ pip install -r requirements.txt
 The default `requirements.txt` installs PyTorch CUDA 12.1 wheels.
 If you do not have a CUDA-compatible GPU, install the CPU PyTorch build from the official PyTorch instructions, then install the remaining dependencies.
 
+## Interactive App
+
+Run the local Streamlit interface:
+
+```bash
+streamlit run app.py
+```
+
+`app.py` provides an interactive local demo for indexing video footage and searching it with natural-language queries.
+Users can either upload a video through the Streamlit interface or provide a local file path for larger files.
+Uploaded videos are saved locally in `uploads/` and ignored by Git.
+The app includes example query prompts and displays matching frames in a local results grid.
+
+The CLI tools remain available for direct usage:
+
+```bash
+python indexer.py "path/to/video.mp4"
+python searcher.py "red backpack"
+```
+
 ## Usage
 
 Index a video:
@@ -162,6 +182,7 @@ Generated output folders are ignored by Git so private footage and derived frame
 vision-vault/
   README.md
   LICENSE
+  app.py
   indexer.py
   searcher.py
   requirements.txt
