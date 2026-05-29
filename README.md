@@ -48,17 +48,19 @@ The project has two main scripts:
 
 ## Demo
 
-Demo screenshots will be added soon.
+Vision Vault Studio provides a local interactive interface for indexing videos and searching matching frames with natural-language queries.
 
-Suggested future asset structure:
+### Studio overview
 
-```text
-assets/
-  demo-search-results.png
-  architecture.png
-```
+![Vision Vault Studio overview](assets/vision-vault-studio-overview.png)
 
-No demo screenshots are included yet because generated or fake assets should not be used for portfolio presentation.
+### Indexing workflow
+
+![Vision Vault Studio indexing workflow](assets/vision-vault-studio-indexing.png)
+
+### Search results workflow
+
+![Vision Vault Studio search workflow](assets/vision-vault-studio-search.png)
 
 ## Tech Stack
 
@@ -225,28 +227,6 @@ Video files, extracted frames, local databases, and search outputs can contain s
 - Add unit tests for filename sanitization and CLI argument handling.
 - Add configurable model selection.
 - Add a lightweight web interface for reviewing search results.
-
-## GitHub Repo Settings
-
-Suggested GitHub description:
-
-```text
-AI-powered local video search tool that indexes footage with CLIP embeddings and lets you find matching frames using natural-language queries.
-```
-
-Suggested topics:
-
-```text
-computer-vision
-clip
-embeddings
-vector-search
-chromadb
-video-search
-semantic-search
-python
-ai
-```
 
 ## License
 
